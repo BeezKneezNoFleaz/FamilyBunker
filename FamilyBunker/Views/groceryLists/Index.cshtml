@@ -1,0 +1,41 @@
+﻿@model IEnumerable<FamilyBunker.Entities.groceryList>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.itemName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.quantity)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.itemName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.quantity)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.groceryId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.groceryId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.groceryId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
