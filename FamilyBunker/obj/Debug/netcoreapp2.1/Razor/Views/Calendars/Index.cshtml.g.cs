@@ -14,17 +14,32 @@ namespace AspNetCore
     using Microsoft.AspNetCore.Mvc.Rendering;
     using Microsoft.AspNetCore.Mvc.ViewFeatures;
 #line 1 "C:\Users\Frank\source\repos\FamilyBunker\FamilyBunker\Views\_ViewImports.cshtml"
-using FamilyBunker;
+using Microsoft.AspNetCore.Identity;
 
 #line default
 #line hidden
 #line 2 "C:\Users\Frank\source\repos\FamilyBunker\FamilyBunker\Views\_ViewImports.cshtml"
+using FamilyBunker;
+
+#line default
+#line hidden
+#line 3 "C:\Users\Frank\source\repos\FamilyBunker\FamilyBunker\Views\_ViewImports.cshtml"
 using FamilyBunker.Models;
 
 #line default
 #line hidden
+#line 4 "C:\Users\Frank\source\repos\FamilyBunker\FamilyBunker\Views\_ViewImports.cshtml"
+using FamilyBunker.Models.AccountViewModels;
+
+#line default
+#line hidden
+#line 5 "C:\Users\Frank\source\repos\FamilyBunker\FamilyBunker\Views\_ViewImports.cshtml"
+using FamilyBunker.Models.ManageViewModels;
+
+#line default
+#line hidden
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"54b7d6c0d2c8f394b2d8aacdec3f492012dde5cd", @"/Views/Calendars/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"decf28cbea34b04306ae1f4f23cc2c49e53e00e5", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"d113e47824f38b55b696e3f5ec44179c35d8d2d3", @"/Views/_ViewImports.cshtml")]
     public class Views_Calendars_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<IEnumerable<FamilyBunker.Entities.Calendar>>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-action", "Create", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -66,7 +81,7 @@ using FamilyBunker.Models;
             WriteLiteral("\r\n<h2>Index</h2>\r\n\r\n<p>\r\n    ");
             EndContext();
             BeginContext(124, 37, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "19485d35ecfe44baab59f119882f365d", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a4f2605193924f1183d9c98a63133be0", async() => {
                 BeginContext(147, 10, true);
                 WriteLiteral("Create New");
                 EndContext();
@@ -176,7 +191,7 @@ using FamilyBunker.Models;
             WriteLiteral("\r\n            </td>\r\n            <td>\r\n                ");
             EndContext();
             BeginContext(1154, 61, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "30af55a1765a4f219d9a9007de9bd16b", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "51ff8828f1604d0998d7d2c54140b5cf", async() => {
                 BeginContext(1207, 4, true);
                 WriteLiteral("Edit");
                 EndContext();
@@ -211,7 +226,7 @@ using FamilyBunker.Models;
             WriteLiteral(" |\r\n                ");
             EndContext();
             BeginContext(1235, 67, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "82febaf2a633482c807322dd2f8c1202", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b2f4d10cabd74186981ebe9c8fee38ba", async() => {
                 BeginContext(1291, 7, true);
                 WriteLiteral("Details");
                 EndContext();
@@ -246,7 +261,7 @@ using FamilyBunker.Models;
             WriteLiteral(" |\r\n                ");
             EndContext();
             BeginContext(1322, 65, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6112e857710d4348ab8e0380629e9850", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9f1a6f1b9c5c474abb690cf24dce31c2", async() => {
                 BeginContext(1377, 6, true);
                 WriteLiteral("Delete");
                 EndContext();

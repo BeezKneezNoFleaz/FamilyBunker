@@ -2,10 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+//using DefaultTemplate.Services;
+using FamilyBunker.Models;
+using FamilyBunker.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -33,6 +37,16 @@ namespace FamilyBunker
 
             services.AddDbContext<FamilyBunkerContext>();
 
+
+            services.AddIdentity<ApplicationUser, IdentityRole>(options =>
+            options.Password.RequiredLength = 6)
+            .AddEntityFrameworkStores<FamilyBunkerContext>()
+            .AddDefaultTokenProviders();
+            services.AddTransient<IEmailSender, AuthMessageSender>();
+            services.AddTransient<ISmsSender, AuthMessageSender>();
+
+
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 
@@ -52,6 +66,8 @@ namespace FamilyBunker
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();
+
+            app.UseAuthentication();
 
             app.UseMvc(routes =>
             {
