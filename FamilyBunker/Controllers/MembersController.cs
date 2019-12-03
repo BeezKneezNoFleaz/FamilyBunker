@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using FamilyBunker;
 using FamilyBunker.Entities;
+using Microsoft.AspNetCore.Authorization;
+using System.Security.Claims;
 
 namespace FamilyBunker.Controllers
 {
@@ -58,6 +60,14 @@ namespace FamilyBunker.Controllers
         {
             if (ModelState.IsValid)
             {
+
+                //if (member.nickName.Contains("Daddy") || member.nickName.Contains("Mommy"))
+                //{
+                //    var IsAdminClaim = new Claim(model.IsAdmin.ToString(), "IsAdmin");
+                //    var IsAdminClaim = new Claim("IsAdmin", "IsAdmin");
+                //    await _userManager.AddClaimAsync(user, IsAdminClaim);
+                //}
+
                 _context.Add(member);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -117,6 +127,7 @@ namespace FamilyBunker.Controllers
         }
 
         // GET: Members/Delete/5
+        [Authorize("IsParent")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -135,6 +146,7 @@ namespace FamilyBunker.Controllers
         }
 
         // POST: Members/Delete/5
+        [Authorize("IsParent")]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)

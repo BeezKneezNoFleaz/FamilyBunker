@@ -67,6 +67,16 @@ namespace FamilyBunker.Controllers
             return View(model);
         }
 
+        [HttpGet]
+        [Authorize("IsAdmin")]
+        public IActionResult ListUsers()
+        {
+            var users = _userManager.Users;
+            return View(users);
+        }
+
+
+
         //
         // POST: /Manage/RemoveLogin
         [HttpPost]

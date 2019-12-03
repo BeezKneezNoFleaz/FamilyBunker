@@ -114,6 +114,20 @@ namespace FamilyBunker.Controllers
                 var result = await _userManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
+
+                    if (model.Email.Contains("admin1") || model.Email.Contains("admin2") || model.Email.Contains("admin3"))
+                    {
+                        //var IsAdminClaim = new Claim(model.IsAdmin.ToString(), "IsAdmin");
+                        var IsAdminClaim = new Claim("IsAdmin", "IsAdmin");
+                        await _userManager.AddClaimAsync(user, IsAdminClaim);
+                    }
+                    else if (model.registerAsParent == true)
+                    {
+                        //var IsAdminClaim = new Claim(model.IsAdmin.ToString(), "IsAdmin");
+                        var IsParentClaim = new Claim("IsParent", "Parent");
+                        await _userManager.AddClaimAsync(user, IsParentClaim);
+                    }
+
                     // For more information on how to enable account confirmation and password reset please visit https://go.microsoft.com/fwlink/?LinkID=532713
                     // Send an email with this link
                     //var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);

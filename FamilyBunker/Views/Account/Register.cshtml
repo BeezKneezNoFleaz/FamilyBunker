@@ -8,6 +8,36 @@
 <form asp-controller="Account" asp-action="Register" asp-route-returnurl="@ViewData["ReturnUrl"]" method="post" class="form-horizontal">
     <h4>Create a new account.</h4>
     <hr />
+
+
+    <div asp-validation-summary="All" class="text-danger"></div>
+    <div class="form-group">
+        <label asp-for="FirstNameReg" class="col-md-2 control-label"></label>
+        <div class="col-md-10">
+            <input asp-for="FirstNameReg" class="form-control" />
+            <span asp-validation-for="FirstNameReg" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div asp-validation-summary="All" class="text-danger"></div>
+    <div class="form-group">
+        <label asp-for="LastNameReg" class="col-md-2 control-label"></label>
+        <div class="col-md-10">
+            <input asp-for="LastNameReg" class="form-control" />
+            <span asp-validation-for="LastNameReg" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div asp-validation-summary="All" class="text-danger"></div>
+    <div class="form-group">
+        <label asp-for="NickNameReg" class="col-md-2 control-label"></label>
+        <div class="col-md-10">
+            <input asp-for="NickNameReg" class="form-control" />
+            <span asp-validation-for="NickNameReg" class="text-danger"></span>
+        </div>
+    </div>
+
+
     <div asp-validation-summary="All" class="text-danger"></div>
     <div class="form-group">
         <label asp-for="Email" class="col-md-2 control-label"></label>
@@ -16,6 +46,26 @@
             <span asp-validation-for="Email" class="text-danger"></span>
         </div>
     </div>
+
+
+    <div asp-validation-summary="All" class="text-danger"></div>
+    <div class="form-group">
+        <label asp-for="FamilyCodeName" class="col-md-2 control-label"></label>
+        <div class="col-md-10">
+            <input asp-for="FamilyCodeName" class="form-control" />
+            <span asp-validation-for="FamilyCodeName" class="text-danger"></span>
+        </div>
+    </div>
+    <div asp-validation-summary="All" class="checkbox"></div>
+    <div class="form-group">
+        <label asp-for="registerAsParent" class="col-md-2 control-label"></label>
+        <div class="col-md-10">
+            <input asp-for="registerAsParent" class="form-control" />
+            <span asp-validation-for="registerAsParent" class="checkbox"></span>
+        </div>
+    </div>
+
+
     <div class="form-group">
         <label asp-for="Password" class="col-md-2 control-label"></label>
         <div class="col-md-10">

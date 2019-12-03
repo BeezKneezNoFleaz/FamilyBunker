@@ -1,0 +1,38 @@
+﻿
+@model IEnumerable<ApplicationUser>
+
+
+
+@{ 
+    ViewBag.Title = "All Users";
+}
+
+<h1>All Users</h1>
+
+
+@if (Model.Any())
+{
+
+    foreach (var user in Model)
+    {
+        <div class="card">
+            <div class="card-body">
+                User Id: @user.Id
+                User Id: @user.UserName
+                User Id: @user.Email
+            </div>
+        </div>
+            }
+        }
+        else
+        {
+<div class="card">
+    <div class="card-header">
+        No Users created yet
+    </div>
+
+    <div class="card-body">
+        No Users created yet
+    </div>
+</div>
+}

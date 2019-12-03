@@ -68,3 +68,4 @@ C:\Users\Frank\source\repos\FamilyBunker\FamilyBunker\obj\Debug\netcoreapp2.1\Ra
 C:\Users\Frank\source\repos\FamilyBunker\FamilyBunker\obj\Debug\netcoreapp2.1\Razor\Views\Manage\SetPassword.cshtml.g.cs
 C:\Users\Frank\source\repos\FamilyBunker\FamilyBunker\obj\Debug\netcoreapp2.1\Razor\Views\Manage\VerifyPhoneNumber.cshtml.g.cs
 C:\Users\Frank\source\repos\FamilyBunker\FamilyBunker\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_LoginPartial.cshtml.g.cs
+C:\Users\Frank\source\repos\FamilyBunker\FamilyBunker\obj\Debug\netcoreapp2.1\Razor\Views\Manage\ListUsers.cshtml.g.cs

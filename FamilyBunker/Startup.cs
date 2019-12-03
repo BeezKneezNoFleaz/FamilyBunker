@@ -13,6 +13,8 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using FamilyBunker.Authorization;
+using Microsoft.AspNetCore.Authorization;
 
 namespace FamilyBunker
 {
@@ -39,7 +41,7 @@ namespace FamilyBunker
 
 
             services.AddIdentity<ApplicationUser, IdentityRole>(options =>
-            options.Password.RequiredLength = 6)
+            options.Password.RequiredLength = 5)
             .AddEntityFrameworkStores<FamilyBunkerContext>()
             .AddDefaultTokenProviders();
             services.AddTransient<IEmailSender, AuthMessageSender>();
@@ -48,6 +50,21 @@ namespace FamilyBunker
 
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+
+            services.AddAuthorization(options =>
+            {
+                options.AddPolicy(
+                    "IsAdmin",
+                    policyBuilder => policyBuilder
+                        .RequireClaim(Claims.IsAdmin));
+
+            options.AddPolicy(
+                "IsParent",
+                policyBuilder => policyBuilder
+                    .RequireClaim(Claims.IsParent));
+
+        });
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
