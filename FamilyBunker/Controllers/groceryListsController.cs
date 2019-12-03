@@ -62,7 +62,7 @@ namespace FamilyBunker.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("groceryId,itemName,quantity,memberId")] groceryList groceryList)
+        public async Task<IActionResult> Create([Bind("groceryId,itemName,quantity,FamilyCodeName,memberId")] groceryList groceryList)
         {
             if (ModelState.IsValid)
             {

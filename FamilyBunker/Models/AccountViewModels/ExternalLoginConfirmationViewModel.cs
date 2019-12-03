@@ -11,5 +11,9 @@ namespace FamilyBunker.Models.AccountViewModels
         [Required]
         [EmailAddress]
         public string Email { get; set; }
+
+        [Required]
+        [StringLength(100)]
+        public string FamilyCodeName { get; set; }
     }
 }

@@ -110,7 +110,7 @@ namespace FamilyBunker.Controllers
             ViewData["ReturnUrl"] = returnUrl;
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                var user = new ApplicationUser { UserName = model.Email, FamilyCodeName = model.FamilyCodeName, Email = model.Email };
                 var result = await _userManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
@@ -121,12 +121,16 @@ namespace FamilyBunker.Controllers
                         var IsAdminClaim = new Claim("IsAdmin", "IsAdmin");
                         await _userManager.AddClaimAsync(user, IsAdminClaim);
                     }
-                    else if (model.registerAsParent == true)
-                    {
-                        //var IsAdminClaim = new Claim(model.IsAdmin.ToString(), "IsAdmin");
-                        var IsParentClaim = new Claim("IsParent", "Parent");
-                        await _userManager.AddClaimAsync(user, IsParentClaim);
-                    }
+                    //else if (model.registerAsParent == true)
+                    //{
+                    //    var IsAdminClaim = new Claim(model.IsAdmin.ToString(), "IsAdmin");
+                    //    var IsParentClaim = new Claim("IsParent", "Parent");
+                    //    await _userManager.AddClaimAsync(user, IsParentClaim);
+                    //}
+
+
+                    var familyCodeNameClaim = new Claim("FamilyCodeName", model.FamilyCodeName);
+                    await _userManager.AddClaimAsync(user, familyCodeNameClaim);
 
                     // For more information on how to enable account confirmation and password reset please visit https://go.microsoft.com/fwlink/?LinkID=532713
                     // Send an email with this link
@@ -226,7 +230,7 @@ namespace FamilyBunker.Controllers
                 {
                     return View("ExternalLoginFailure");
                 }
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                var user = new ApplicationUser { UserName = model.Email, FamilyCodeName = model.FamilyCodeName, Email = model.Email };
                 var result = await _userManager.CreateAsync(user);
                 if (result.Succeeded)
                 {

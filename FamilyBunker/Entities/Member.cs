@@ -16,6 +16,13 @@ namespace FamilyBunker.Entities
         [StringLength(50)]
         public string nickName { get; set; }
 
+
+        [Required]
+        [StringLength(100)]
+        [Display(Name = "Family Code Name")]
+        public string FamilyCodeName { get; set; }
+
+
         public ICollection<Calendar> Calendars { get; set; }
         public ICollection<groceryList> groceryLists { get; set; }
     }

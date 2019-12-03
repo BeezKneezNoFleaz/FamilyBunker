@@ -8,5 +8,6 @@ namespace FamilyBunker.Models
 {
     public class ApplicationUser : IdentityUser
     {
+        public string FamilyCodeName;
     }
 }

@@ -23,8 +23,13 @@
                 <span asp-validation-for="quantity" class="text-danger"></span>
             </div>
             <div class="form-group">
+                <label asp-for="FamilyCodeName" class="control-label"></label>
+                <input asp-for="FamilyCodeName" class="form-control" />
+                <span asp-validation-for="FamilyCodeName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
                 <label asp-for="memberId" class="control-label"></label>
-                <select asp-for="memberId" class ="form-control" asp-items="ViewBag.memberId"></select>
+                <select asp-for="memberId" class="form-control" asp-items="ViewBag.memberId"></select>
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-default" />

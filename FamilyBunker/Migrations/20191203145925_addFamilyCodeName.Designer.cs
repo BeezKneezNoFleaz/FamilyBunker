@@ -4,14 +4,16 @@ using FamilyBunker;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace FamilyBunker.Migrations
 {
     [DbContext(typeof(FamilyBunkerContext))]
-    partial class FamilyBunkerContextModelSnapshot : ModelSnapshot
+    [Migration("20191203145925_addFamilyCodeName")]
+    partial class addFamilyCodeName
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -24,10 +26,6 @@ namespace FamilyBunker.Migrations
                     b.Property<int>("calendarId")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("FamilyCodeName")
-                        .IsRequired()
-                        .HasMaxLength(100);
 
                     b.Property<DateTime>("date");
 
@@ -53,10 +51,6 @@ namespace FamilyBunker.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("FamilyCodeName")
-                        .IsRequired()
-                        .HasMaxLength(100);
-
                     b.Property<string>("itemName")
                         .HasMaxLength(200);
 
@@ -76,10 +70,6 @@ namespace FamilyBunker.Migrations
                     b.Property<int>("memberId")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("FamilyCodeName")
-                        .IsRequired()
-                        .HasMaxLength(100);
 
                     b.Property<string>("firstName")
                         .HasMaxLength(50);

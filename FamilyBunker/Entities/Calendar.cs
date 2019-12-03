@@ -14,6 +14,14 @@ namespace FamilyBunker.Entities
         public DateTime date { get; set; }
         public DateTime startTime { get; set; }
         public DateTime endTime { get; set; }
+
+
+        [Required]
+        [StringLength(100)]
+        [Display(Name = "Family Code Name")]
+        public string FamilyCodeName { get; set; }
+
+
         public int memberId { get; set; }
     }
 }

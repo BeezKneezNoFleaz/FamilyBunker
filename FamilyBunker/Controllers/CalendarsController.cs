@@ -94,7 +94,7 @@ namespace FamilyBunker.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("calendarId,eventName,date,startTime,endTime,memberId")] Calendar calendar)
+        public async Task<IActionResult> Edit(int id, [Bind("calendarId,eventName,date,startTime,endTime,FamilyCodeName,memberId")] Calendar calendar)
         {
             if (id != calendar.calendarId)
             {

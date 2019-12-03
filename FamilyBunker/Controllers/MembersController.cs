@@ -56,7 +56,7 @@ namespace FamilyBunker.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("memberId,firstName,lastName,nickName")] Member member)
+        public async Task<IActionResult> Create([Bind("memberId,firstName,lastName,nickName,FamilyCodeName")] Member member)
         {
             if (ModelState.IsValid)
             {
@@ -96,7 +96,7 @@ namespace FamilyBunker.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("memberId,firstName,lastName,nickName")] Member member)
+        public async Task<IActionResult> Edit(int id, [Bind("memberId,firstName,lastName,nickName,FamilyCodeName")] Member member)
         {
             if (id != member.memberId)
             {

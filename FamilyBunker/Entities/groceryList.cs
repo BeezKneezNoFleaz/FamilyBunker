@@ -15,6 +15,14 @@ namespace FamilyBunker.Entities
         public string itemName { get; set; }
         public int quantity { get; set; }
         [ForeignKey("memberId")]
+
+
+        [Required]
+        [StringLength(100)]
+        [Display(Name = "Family Code Name")]
+        public string FamilyCodeName { get; set; }
+
+
         public int memberId { get; set; }
     }
 }
