@@ -86,7 +86,7 @@ Write(ViewData["Title"]);
             WriteLiteral(".</h1>\n<p>\n    Your password has been reset. Please ");
             EndContext();
             BeginContext(135, 71, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "358f3458dfc047059b333777b8fde814", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1c18e19ce1064e4393f354d5ca50c670", async() => {
                 BeginContext(182, 20, true);
                 WriteLiteral("Click here to log in");
                 EndContext();

@@ -60,7 +60,7 @@ namespace FamilyBunker.Controllers
         {
             if (ModelState.IsValid)
             {
-
+                member.FamilyCodeName = User.Claims.FirstOrDefault(x => x.Type == "FamilyCodeName").Value;
                 //if (member.nickName.Contains("Daddy") || member.nickName.Contains("Mommy"))
                 //{
                 //    var IsAdminClaim = new Claim(model.IsAdmin.ToString(), "IsAdmin");
@@ -127,7 +127,8 @@ namespace FamilyBunker.Controllers
         }
 
         // GET: Members/Delete/5
-        [Authorize("IsParent")]
+        //[Authorize("IsParent")]
+        [Authorize("IsAdmin")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -146,7 +147,8 @@ namespace FamilyBunker.Controllers
         }
 
         // POST: Members/Delete/5
-        [Authorize("IsParent")]
+        //[Authorize("IsParent")]
+        [Authorize("IsAdmin")]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)

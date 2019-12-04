@@ -17,7 +17,6 @@ namespace FamilyBunker.Entities
         public string nickName { get; set; }
 
 
-        [Required]
         [StringLength(100)]
         [Display(Name = "Family Code Name")]
         public string FamilyCodeName { get; set; }

@@ -64,6 +64,7 @@ namespace FamilyBunker.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("calendarId,eventName,date,startTime,endTime,memberId")] Calendar calendar)
         {
+            calendar.FamilyCodeName = User.Claims.FirstOrDefault(x => x.Type == "FamilyCodeName").Value;
             if (ModelState.IsValid)
             {
                 _context.Add(calendar);

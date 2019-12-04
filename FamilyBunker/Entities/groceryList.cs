@@ -17,7 +17,6 @@ namespace FamilyBunker.Entities
         [ForeignKey("memberId")]
 
 
-        [Required]
         [StringLength(100)]
         [Display(Name = "Family Code Name")]
         public string FamilyCodeName { get; set; }

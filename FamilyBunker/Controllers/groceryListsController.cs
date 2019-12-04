@@ -22,7 +22,8 @@ namespace FamilyBunker.Controllers
         // GET: groceryLists
         public async Task<IActionResult> Index()
         {
-            return View(await _context.groceryLists.ToListAsync());
+            //return View(await _context.groceryLists.Where(x => x.FamilyCodeName == "lohndoesfamily").ToListAsync());
+            return View(await _context.groceryLists.Where(x => x.FamilyCodeName == User.Claims.FirstOrDefault(y => y.Type == "FamilyCodeName").Value).ToListAsync());
         }
 
         // GET: groceryLists/Details/5
@@ -66,6 +67,7 @@ namespace FamilyBunker.Controllers
         {
             if (ModelState.IsValid)
             {
+                groceryList.FamilyCodeName = User.Claims.FirstOrDefault(x => x.Type == "FamilyCodeName").Value;
                 _context.Add(groceryList);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
